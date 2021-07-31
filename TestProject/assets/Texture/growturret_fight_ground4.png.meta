@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "05ac55b1-258d-4d40-b5f9-f4dc77efea56",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 116,
+  "height": 116,
+  "platformSettings": {},
+  "subMetas": {
+    "growturret_fight_ground4": {
+      "ver": "1.0.4",
+      "uuid": "bd9afe04-2a12-487d-be36-2e004a18f510",
+      "rawTextureUuid": "05ac55b1-258d-4d40-b5f9-f4dc77efea56",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 116,
+      "height": 116,
+      "rawWidth": 116,
+      "rawHeight": 116,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
