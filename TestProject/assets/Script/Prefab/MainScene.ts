@@ -27,6 +27,7 @@ export default class MainScene extends BaseView {
 
     onClickButton(){
         Manager.AudioManager.isCanClick();
+        Manager.ViewManager.showView(Manager.EnumManager.ViewName.LayerSettingNotify);
     }
 
     setEventListener(){

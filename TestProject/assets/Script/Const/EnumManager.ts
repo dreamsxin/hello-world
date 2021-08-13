@@ -20,6 +20,7 @@ export default class EnumManager {
     public ViewName = {
         LoadingScene:"Prefab/LoadingScene",
         MainScene:"Prefab/MainScene",
+        LayerSettingNotify:"Prefab/Notify/LayerSettingNotify",
     }
 
     /**

@@ -69,6 +69,17 @@ export default class AudioManager {
     public stopMusic(){
         cc.audioEngine.stopMusic();
     }
+
+    /**
+     * 音效是否开启
+     */
+    public isSoundOpen():boolean{
+        return Manager.DataManager.bIsOpenSound;
+    }
+
+    public setSoundOpen(isOpen:boolean){
+        Manager.DataManager.bIsOpenSound = isOpen;
+    }
     
     /**
      * 播放音效

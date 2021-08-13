@@ -1,0 +1,36 @@
+{
+  "ver": "2.3.4",
+  "uuid": "eb15c3ca-56d6-48e6-905d-2f735338e831",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 563,
+  "height": 445,
+  "platformSettings": {},
+  "subMetas": {
+    "AngryBomb_common_icon_01": {
+      "ver": "1.0.4",
+      "uuid": "c064ff5f-4b1c-4ff1-b28d-358e0dd27f69",
+      "rawTextureUuid": "eb15c3ca-56d6-48e6-905d-2f735338e831",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 0,
+      "offsetY": 0,
+      "trimX": 0,
+      "trimY": 0,
+      "width": 563,
+      "height": 445,
+      "rawWidth": 563,
+      "rawHeight": 445,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}
