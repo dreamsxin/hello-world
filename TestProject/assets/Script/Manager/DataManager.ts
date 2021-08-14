@@ -10,7 +10,8 @@ export class DataManager {
 
     //存储玩家数据到本地
     private _userData = {
-
+        //财富：金币，钻石
+        Wealth:{}
     }
 
     //是否有新的数据

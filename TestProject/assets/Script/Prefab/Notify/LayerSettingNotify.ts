@@ -18,6 +18,7 @@ export default class LayerSettingNotify extends BaseView {
     init(){
         super.init();
         this.view_order = Manager.EnumManager.ViewType.TIPS;
+        console.log(2222222222222);
     }
 
     onLoad () {
@@ -29,7 +30,7 @@ export default class LayerSettingNotify extends BaseView {
 
     start(){
         super.start();
-        
+        console.log(11111111111111);
         if(Manager.DataManager.bIsOpenSound){
             this.ToggleSound.getComponent(cc.Toggle).isChecked = true;
             this.SoundCheckMark.active = true;

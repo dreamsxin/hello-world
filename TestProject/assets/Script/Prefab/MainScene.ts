@@ -23,6 +23,11 @@ export default class MainScene extends BaseView {
         super.start();
         Logger.log(this.view_order,"MainScene");
         Manager.AudioManager.playBGM(EnumManager.instance.AudioPath.bgm);
+        console.log(new Date().SecondsFormatHours(300));
+        console.log(new Date().SecondsFormatMinutes(100));
+        console.log(new Date().SecondsFormatDayHourMinuteNumber(100));
+        console.log(new Date().SecondsFormatDayHourMinuteText(100));
+        console.log(new Date().SecondsFormatDayHourMinuteBrfore(1000));
     }
 
     onClickButton(){

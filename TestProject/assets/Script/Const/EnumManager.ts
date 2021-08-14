@@ -56,6 +56,9 @@ export default class EnumManager {
         buttonSound:"Audio/dianji"
     }
 
+    /**
+     * 资源的名字
+     */
     public AssetName = {
         AnimationClip : 'cc_AnimationClip',
         ParticleAsset : 'cc_ParticleAsset',
@@ -74,5 +77,14 @@ export default class EnumManager {
     
         DragonBonesAsset : 'cc_DragonBonesAsset',
         DragonBonesAtlasAsset : 'cc_DragonBonesAtlasAsset',
+    }
+
+    /**
+     * 财富的类型，1是金币，2是钻石
+     */
+    public WealthType = {
+        None:0,
+        Gold:1,
+        Diamond:2
     }
 }
