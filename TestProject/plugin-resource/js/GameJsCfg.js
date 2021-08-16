@@ -1,16 +1,1 @@
-module.exports = {
-    PrefabData: {
-        1001: {
-            path: "Prefab/MainScene",
-            instantiation: 1,
-            count: 1,
-            des: "主界面预制体"
-        },
-        int: {
-            path: "string",
-            instantiation: "int",
-            count: "int",
-            des: "string"
-        }
-    }
-};
+module.exports = {"ConstConfig":{"string":{"value":"int","desc":"string"},"gold":{"value":1000,"desc":"金币"},"diamond":{"value":100,"desc":"钻石"}}};

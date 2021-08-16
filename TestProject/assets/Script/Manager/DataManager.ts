@@ -2,7 +2,7 @@
  * 数据管理者
  */
 
-import { PrefabConfig } from "../Config/PrefabConfig";
+import { ConstConfig } from "../Config/ConstConfig";
 import { Logger } from "../Const/Logger";
 import Manager from "./Manager";
 
@@ -16,6 +16,10 @@ export class DataManager {
 
     //是否有新的数据
     private _isNewData:boolean = false;
+
+    //是否加载完成
+    private _isLoadFinish:boolean = false;
+    private loadConfigNameList:Map<string,boolean> = new Map();
 
     /**数据管理者的唯一实例 */
     private static _instance:DataManager = null;
@@ -34,8 +38,8 @@ export class DataManager {
 
     //初始化
     public init(){
-        this.readUserData();
         this.initConfig();
+        this.readUserData();
     }
 
     /**
@@ -63,7 +67,7 @@ export class DataManager {
      * 读取配置文件
      */
     private initConfig(){
-        this.loadConfig(Manager.EnumManager.JsonDataName.PrefabData);
+        this.loadConfig(Manager.EnumManager.JsonDataName.ConstConfig);
     }
 
     /**
@@ -76,15 +80,26 @@ export class DataManager {
             }
             else{
                 switch (configName) {
-                    case Manager.EnumManager.JsonDataName.PrefabData:
-                        PrefabConfig.initData(object.json)
+                    case Manager.EnumManager.JsonDataName.ConstConfig:
+                        ConstConfig.initData(object.json)
                         break;
-                
-                    default:
-                        break;
+                }
+                this.loadConfigNameList.set(configName,true);
+                this._isLoadFinish = this.checkFinish();
+                if(this._isLoadFinish){
+                    Logger.log("JSON加载完成---------"+`${this._isLoadFinish}`);
                 }
             }
         });
+    }
+
+    checkFinish():boolean{
+        this.loadConfigNameList.forEach((value,key)=>{
+            if(value == false){
+                return false;
+            }
+        });
+        return true;
     }
 
     /**

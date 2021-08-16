@@ -21,18 +21,21 @@ export default class MainScene extends BaseView {
 
     start () {
         super.start();
-        Logger.log(this.view_order,"MainScene");
         Manager.AudioManager.playBGM(EnumManager.instance.AudioPath.bgm);
-        console.log(new Date().SecondsFormatHours(300));
-        console.log(new Date().SecondsFormatMinutes(100));
-        console.log(new Date().SecondsFormatDayHourMinuteNumber(100));
-        console.log(new Date().SecondsFormatDayHourMinuteText(100));
-        console.log(new Date().SecondsFormatDayHourMinuteBrfore(1000));
     }
 
-    onClickButton(){
+    onClickButton(event,custonEventData){
         Manager.AudioManager.isCanClick();
-        Manager.ViewManager.showView(Manager.EnumManager.ViewName.LayerSettingNotify);
+        switch (custonEventData) {
+            case "AddGold":
+                Manager.GameCtrl.addGold(1050);
+                break;
+            case "ReduceGold":
+                Manager.GameCtrl.reduceGold(150);
+                break;
+            default:
+                break;
+        }
     }
 
     setEventListener(){

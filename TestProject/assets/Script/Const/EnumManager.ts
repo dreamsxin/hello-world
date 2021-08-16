@@ -45,7 +45,7 @@ export default class EnumManager {
      * Json数据表的名字
      */
     public JsonDataName = {
-        PrefabData:"PrefabData",
+        ConstConfig:"ConstConfig",
     }
 
     /**
@@ -86,5 +86,18 @@ export default class EnumManager {
         None:0,
         Gold:1,
         Diamond:2
+    }
+
+    public ConstConfigID = {
+        gold:"gold",
+        diamond:"diamond",
+    }
+
+    public UserDataElement = {
+        Wealth:"Wealth",
+    }
+
+    public EventName = {
+        UpdateCoinAndDiamondView : "UpdateCoinAndDiamondView",
     }
 }
