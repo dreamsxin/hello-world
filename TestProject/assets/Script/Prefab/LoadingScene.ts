@@ -29,7 +29,7 @@ export default class LoadingScene extends BaseView {
 
     update (dt) {
         this.Bar.fillRange += dt;
-        if(Manager.DataManager.checkFinish()){
+        if(Manager.ConfigManager.checkFinish()){
             let userData = Manager.DataManager.getUserData();
             if(JSON.stringify(userData[Manager.EnumManager.UserDataElement.Wealth]) === "{}"){
                 let value = {
@@ -39,7 +39,7 @@ export default class LoadingScene extends BaseView {
                 Manager.DataManager.setData(Manager.EnumManager.UserDataElement.Wealth,value);
             }
         }
-        if(this.Bar.fillRange >= 1 && Manager.DataManager.checkFinish()){
+        if(this.Bar.fillRange >= 1 && Manager.ConfigManager.checkFinish()){
             Manager.ViewManager.hideView(Manager.EnumManager.ViewName.LoadingScene,true);
             Manager.ViewManager.showView(Manager.EnumManager.ViewName.MainScene);
         }

@@ -1,5 +1,6 @@
 import EnumManager from "../Const/EnumManager";
 import AudioManager from "./AudioManager";
+import ConfigManager from "./ConfigManager";
 import { DataManager } from "./DataManager";
 import EventManager from "./EventManager";
 import GameCtrl from "./GameCtrl";
@@ -46,4 +47,7 @@ export default class Manager {
 
     /**游戏逻辑控制 */
     public static GameCtrl:GameCtrl = GameCtrl.instance;
+
+    /**配置管理者 */
+    public static ConfigManager:ConfigManager = ConfigManager.instance;
 }

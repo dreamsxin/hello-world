@@ -17,9 +17,7 @@ export class DataManager {
     //是否有新的数据
     private _isNewData:boolean = false;
 
-    //是否加载完成
-    private _isLoadFinish:boolean = false;
-    private loadConfigNameList:Map<string,boolean> = new Map();
+    
 
     /**数据管理者的唯一实例 */
     private static _instance:DataManager = null;
@@ -36,10 +34,23 @@ export class DataManager {
     //音效是否开启
     public bIsOpenSound:boolean = true;
 
+    //存储加载次数
+    private _readNumber:number = 0;
+    //状态改变
+    private _readState:boolean = false;
+
     //初始化
     public init(){
         this.initConfig();
         this.readUserData();
+        this.initSaveUserData();
+    }
+
+    /**
+     * 读取配置文件
+     */
+     private initConfig(){
+        Manager.ConfigManager.loadConfig(Manager.EnumManager.JsonDataName.ConstConfig);
     }
 
     /**
@@ -48,6 +59,7 @@ export class DataManager {
     private readUserData(){
         let stringData = cc.sys.localStorage.getItem("userData");
         if(stringData){
+            this._isNewData = true;
             let jsonData = JSON.parse(stringData);
             for (const key in jsonData) {
                 if (Object.prototype.hasOwnProperty.call(jsonData, key)) {
@@ -55,51 +67,27 @@ export class DataManager {
                 }
             }
         }
+        else if(this._readNumber++ < 3){
+            setTimeout(() => {
+                this.readUserData();
+            }, 2000);
+        }
+        else{
+            this._isNewData = true;
+        }
+        
+    }
+
+    /**
+     * 初始化保存数据
+     */
+    private initSaveUserData(){
         //每隔一段时间，如果有新的数据进来，保存一下
         setInterval(()=>{
             if(this._isNewData){
                 this.saveDta();
             }
         },10000);
-    }
-
-    /**
-     * 读取配置文件
-     */
-    private initConfig(){
-        this.loadConfig(Manager.EnumManager.JsonDataName.ConstConfig);
-    }
-
-    /**
-     * 读取配置文件的数据
-     */
-    private loadConfig(configName:string){
-        cc.loader.loadRes(Manager.EnumManager.ResourceDir.Json + configName,cc.JsonAsset,(err,object)=>{
-            if(err){
-                Logger.err(`读取${configName}失败`);
-            }
-            else{
-                switch (configName) {
-                    case Manager.EnumManager.JsonDataName.ConstConfig:
-                        ConstConfig.initData(object.json)
-                        break;
-                }
-                this.loadConfigNameList.set(configName,true);
-                this._isLoadFinish = this.checkFinish();
-                if(this._isLoadFinish){
-                    Logger.log("JSON加载完成---------"+`${this._isLoadFinish}`);
-                }
-            }
-        });
-    }
-
-    checkFinish():boolean{
-        this.loadConfigNameList.forEach((value,key)=>{
-            if(value == false){
-                return false;
-            }
-        });
-        return true;
     }
 
     /**
@@ -118,8 +106,7 @@ export class DataManager {
     public setData(name:string,value:any){
         if(typeof this._userData[name] === typeof value && this._userData[name] !== value){
             this._userData[name] = value;
-            this._isNewData = true;
-            this.saveDta();
+            this._readState = true;
         }
     }
 
@@ -127,7 +114,7 @@ export class DataManager {
      * 保存数据
      */
     private saveDta(){
-        this._isNewData = false;
+        this._readState = false;
         let stringData = JSON.stringify(this._userData);
         cc.sys.localStorage.setItem("userData",stringData);
     }

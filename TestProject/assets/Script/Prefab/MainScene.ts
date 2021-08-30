@@ -2,7 +2,6 @@
  * 主场景的脚本
  */
 import EnumManager from "../Const/EnumManager";
-import { Logger } from "../Const/Logger";
 import Manager from "../Manager/Manager";
 import BaseView from "../Scene/BaseView";
 

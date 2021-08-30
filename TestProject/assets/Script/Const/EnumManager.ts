@@ -45,6 +45,7 @@ export default class EnumManager {
      * Json数据表的名字
      */
     public JsonDataName = {
+        //常量表
         ConstConfig:"ConstConfig",
     }
 
