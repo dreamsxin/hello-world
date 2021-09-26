@@ -18,8 +18,8 @@ export default class EnumManager {
     * 视图的路径名字
     */
     public ViewName = {
-        LoadingScene:"Prefab/LoadingScene",
-        MainScene:"Prefab/MainScene",
+        LoadingScene:"Prefab/layer/LoadingScene",
+        MainScene:"Prefab/layer/MainScene",
         LayerSettingNotify:"Prefab/Notify/LayerSettingNotify",
     }
 

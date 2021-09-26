@@ -2,8 +2,6 @@
  * 数据管理者
  */
 
-import { ConstConfig } from "../Config/ConstConfig";
-import { Logger } from "../Const/Logger";
 import Manager from "./Manager";
 
 export class DataManager {

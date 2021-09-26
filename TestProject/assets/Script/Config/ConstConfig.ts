@@ -16,16 +16,4 @@ export class ConstConfig extends ConfigBase {
     public static initData(jsonData: Object){
         super.initData(jsonData);
     }
-
-    public static getDataById(id:any){
-        let data = null;
-        data = this.configMap.get(`${id}`);
-        if(data){
-            return data;
-        }
-        else{
-            Logger.err();
-            return null;
-        }
-    }
 }

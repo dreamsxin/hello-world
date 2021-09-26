@@ -2,6 +2,8 @@
  * Config配置的顶层类
  */
 
+import { Logger } from "../Const/Logger";
+
 export class ConfigBase {
 
 
@@ -37,5 +39,17 @@ export class ConfigBase {
             config[key] = obj[key];
         }
         return config;
+    }
+
+    public static getDataById(id:any){
+        let data = null;
+        data = this.configMap.get(`${id}`);
+        if(data){
+            return data;
+        }
+        else{
+            Logger.err();
+            return null;
+        }
     }
 }

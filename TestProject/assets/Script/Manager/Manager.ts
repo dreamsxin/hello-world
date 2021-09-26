@@ -4,7 +4,6 @@ import ConfigManager from "./ConfigManager";
 import { DataManager } from "./DataManager";
 import EventManager from "./EventManager";
 import GameCtrl from "./GameCtrl";
-import NetManager from "./NetManager";
 import ResManager from "./ResManager";
 import ViewManager from "./ViewManager";
 
@@ -40,8 +39,6 @@ export default class Manager {
     public static EnumManager:EnumManager = EnumManager.instance;
     /**数据管理者 */
     public static DataManager:DataManager = DataManager.instance;
-    /**网络管理者 */
-    public static NetManager:NetManager = NetManager.instance;
     /**音效管理者 */
     public static AudioManager:AudioManager = AudioManager.instance;
 
