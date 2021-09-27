@@ -1,3 +1,2 @@
 # hello-world
-just a test project.
-仅仅只是一个测试。
+模仿写成的类似框架的demo.
