@@ -4,6 +4,7 @@ import ConfigManager from "./ConfigManager";
 import { DataManager } from "./DataManager";
 import EventManager from "./EventManager";
 import GameCtrl from "./GameCtrl";
+import MapManager from "./MapManager";
 import ResManager from "./ResManager";
 import ViewManager from "./ViewManager";
 
@@ -47,4 +48,7 @@ export default class Manager {
 
     /**配置管理者 */
     public static ConfigManager:ConfigManager = ConfigManager.instance;
+
+    /**地图管理者 */
+    public static MapManager:MapManager = MapManager.instance;
 }

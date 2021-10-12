@@ -38,7 +38,8 @@ export default class EnumManager {
      * 资源目录
      */
     public ResourceDir = {
-        Json:"Json/"
+        Json:"Json/",//json数据
+        Maps:"Prefab/map/",//地图
     }
 
     /**
